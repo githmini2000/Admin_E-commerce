@@ -49,7 +49,7 @@ const AddProductPage = () => {
 
     if (response.ok) {
       alert("Product added successfully!");
-      setShowForm(false); // Hide the form after successful submission
+      setShowForm(false); 
     } else {
       console.error("Failed to submit form");
     }

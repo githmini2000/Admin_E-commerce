@@ -9,7 +9,7 @@ interface Category {
 
 interface EditProductFormProps {
   product: any;
-  onUpdate: (formData: any) => void; // Changed from onSubmit to onUpdate
+  onUpdate: (formData: any) => void; 
   onCancel: () => void;
 }
 
@@ -20,16 +20,16 @@ const EditProductForm: React.FC<EditProductFormProps> = ({
 }) => {
   const [categories, setCategories] = useState<Category[]>([]);
   const [formData, setFormData] = useState({
-    id: product.id, // Make sure to include the id in the form data
+    id: product.id, 
     title: product.title,
     price: product.price,
     description: product.description,
     image: product.image,
-    category: product.category?.id || "", // Store only category ID
+    category: product.category?.id || "",
     rating: product.rating || 0,
   });
 
-  // Fetch categories from API
+
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -60,7 +60,7 @@ const EditProductForm: React.FC<EditProductFormProps> = ({
       alert("Invalid product ID.");
       return;
     }
-    onUpdate(formData); // Call onUpdate instead of onSubmit
+    onUpdate(formData); 
   };
 
   return (

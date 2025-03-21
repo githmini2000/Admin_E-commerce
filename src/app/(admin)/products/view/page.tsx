@@ -47,7 +47,7 @@ const ViewProductsPage = () => {
   };
 
   const handleEdit = (product: any) => {
-    setEditingProduct(product); // Set the product to edit
+    setEditingProduct(product);
   };
 
   const handleUpdate = async (updatedProduct: any) => {
@@ -56,7 +56,6 @@ const ViewProductsPage = () => {
       return;
     }
 
-    // Send a request to update the product
     const response = await fetch(
       `http://localhost:3001/items/featuredItems/${updatedProduct.id}`,
       {
@@ -70,7 +69,7 @@ const ViewProductsPage = () => {
       setProducts((prevProducts) =>
         prevProducts.map((p) => (p.id === updatedProduct.id ? updatedProduct : p))
       );
-      setEditingProduct(null); // Close the edit form
+      setEditingProduct(null); 
     } else {
       alert("Failed to update the product.");
     }
@@ -93,7 +92,7 @@ const ViewProductsPage = () => {
       ) : editingProduct ? (
         <EditProductForm 
           product={editingProduct} 
-          onUpdate={handleUpdate} // Pass onUpdate here
+          onUpdate={handleUpdate} 
           onCancel={() => setEditingProduct(null)} 
         />
       ) : (
