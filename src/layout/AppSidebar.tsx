@@ -58,8 +58,11 @@ const navItems: NavItem[] = [
   },
   {
     icon: <LuUsersRound size={24} />,
-    name: "Users",
-    path: "/users",
+    name: "Customers",
+    subItems: [
+      { name: "View Customers", path: "/customers/view", pro: false }, 
+      { name: "Bulk Upload", path: "/customers/bulkupload", pro: false } 
+    ],
     
   },
 
